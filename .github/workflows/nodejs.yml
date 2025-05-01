@@ -3,26 +3,26 @@ name: Node.js CI
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch
+      - main
   pull_request:
     branches:
-      - main  # or master
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use Ubuntu as the OS for the build
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # specify your desired node version
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-    - name: Install dependencies
-      run: npm install  # Install your dependencies
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm test  # Run your tests (you can customize this based on your testing setup)
+      - name: Run tests
+        run: npm test
